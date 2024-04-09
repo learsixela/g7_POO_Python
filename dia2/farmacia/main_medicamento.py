@@ -1,41 +1,17 @@
 from medicamento import Medicamento
 
-#instancia de la clase o creacion de un objeto
-paracetamol  = Medicamento()
-aspirina = Medicamento()
+#paso 1: crear instancia
+medicamento_nuevo = Medicamento()
 
-print(paracetamol.descuento)
-print(aspirina.descuento)
+#paso 2: solicitud de ingreso de datos
+precio = int(input("Ingrese el precio del medicamento > "))
 
-#Modificacion del estado de un objeto
-paracetamol.descuento = 0.06
+#paso 3: pasar al metodo de instancia el valor capturado
+medicamento_nuevo.asigna_precio(precio)
 
-print(paracetamol.descuento)
-print(aspirina.descuento)
+print(f"el precio es: ${medicamento_nuevo.precio}.-")
+print(f"el descuento es: {medicamento_nuevo.descuento}%")
 
-Medicamento.descuento = 0.04
-ibuprofeno = Medicamento()
-print(ibuprofeno.descuento)
-
-precio = int(input("Ingrese el precio a validar > "))
-#llamado a un metodo estatico
-es_valido = Medicamento.validar_mayor_a_cero(precio)
-
-if es_valido:
-    print("El precio ingresado es valido")
-else:
-    print("El precio ingresado NO es valido")
-
-print(paracetamol.descuento, aspirina.descuento)
-
-if paracetamol.IVA == aspirina.IVA and paracetamol.descuento == aspirina.descuento:
-    print("Todas las instancias(objetos), tienen los mismmos valores de IVA y descuento")
-    print("El valor del IVA es", Medicamento.IVA)
-    print("El valor de descuento es", Medicamento.descuento)
-
-Medicamento.IVA = 0.19
-#ibuprofeno.modificar_atributo()
-print(ibuprofeno.IVA)
-print(aspirina.IVA)
-
-print(paracetamol.descuento, aspirina.descuento,ibuprofeno.descuento)
+#NO SE PUEDE LLAMAR A UN METODO NO ESTATICO DESDE UNA CLASE
+Medicamento.asigna_precio(1000)
+#TypeError: Medicamento.asigna_precio() missing 1 required positional argument: 'precio_entregado'
