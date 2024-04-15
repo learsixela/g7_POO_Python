@@ -7,6 +7,7 @@ while opcion_ingreso == 1:
     nombre = input("\nIngrese nombre del medicamento:\n")
     stock = int(input("\nIngrese stock del medicamento:\n"))
     m = Medicamento(nombre, stock)
+    
     if m in ingresados:
         indice = ingresados.index(m)
         ingresados[indice] += m
