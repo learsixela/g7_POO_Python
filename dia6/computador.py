@@ -6,7 +6,7 @@ class Ram():
 class DiscoDuro():
     def __init__(self,capacidad):
         self.capacidad=capacidad
-        self.tipo="ssd"
+        self.__tipo="ssd"
 
 class Teclado():
     def __init__(self,idioma: str,cant_teclas: int ):
@@ -19,10 +19,10 @@ class Mouse():
         self.conectividad = conectividad
 
 class Computador():
-    def __init__(self, teclado: Teclado, mouse: Mouse):
+    def __init__(self, teclado: Teclado, mouse: Mouse,velocidad_ram: int, capacidad_dd: int):
         #el computador esta compuesta de 
-        self.ram = Ram(1500,32) #composicion
-        self.disco_duro = DiscoDuro(1024) #composicion
+        self.ram = Ram(velocidad_ram,32) #composicion
+        self.disco_duro = DiscoDuro(capacidad_dd) #composicion
 
         self.teclado = teclado #agregacion
         self.mouse = mouse #agregacion
@@ -31,4 +31,7 @@ class Computador():
 teclado = Teclado("latino", 120)
 mouse = Mouse("Gamer", "bluetooth")
 
-computador_gamer = Computador(teclado,mouse)
+computador_gamer = Computador(teclado,mouse,2300,500)
+
+print(computador_gamer.ram.velocidad)
+print(computador_gamer.teclado.cant_teclas)
