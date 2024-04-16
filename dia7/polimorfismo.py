@@ -65,3 +65,15 @@ print(f"el color de la clase hija es {hijita.color}")
 #instancia de la clase HIJO
 hijito = Hijo(10,1200)
 print(hijito.tamanio,hijito.saldo,hijito.deuda)
+
+#ISINSTANCE isinstance(objeto, clase_a_comparar)
+print(f"hijita es intancia de Hija: {isinstance(hijita,Hija)}")#True
+print(f"hijita es intancia de Hijo: {isinstance(hijita,Hijo)}")#False
+print(f"hijita es intancia de Padre: {isinstance(hijita,Padre)}")#True
+print(f"hijita es intancia de Nieto: {isinstance(hijita,Nieto)}")#False
+print("")
+# objeto regalon
+print(f"regalon es intancia de Nieto: {isinstance(regalon,Nieto)}")
+print(f"regalon es intancia de Hija: {isinstance(regalon,Hija)}")
+print(f"regalon es intancia de Hijo: {isinstance(regalon,Hijo)}")#False
+print(f"regalon es intancia de Padre: {isinstance(regalon,Padre)}")
