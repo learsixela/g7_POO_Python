@@ -9,6 +9,7 @@ class Padre():
     #metodos estaticos
 
     #metodos de instancia
+    
     def cambia_color(self, color: str):
         if color != "":
             self.color = color    
