@@ -39,13 +39,14 @@ while valido:
         print("Error en el ingreso del dividendo")
 
 valido = True
+
 while valido:
     try:
         divisor = int(input("ingrese el numero divisor > "))
         if divisor == 0:
             raise DivisorError("Divisor no puede ser cero",divisor)
         
-        break #valido = False
+        break#forzar la salida inmediata del while(no pasa por finally) #valido = False
     except DivisorError as de:
         print("Error en el ingreso del divisor:: ",de.mensaje)
     except ValueError:
